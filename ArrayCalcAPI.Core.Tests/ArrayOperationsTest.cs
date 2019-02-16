@@ -2,9 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ArrayCalcService;
 using ArrayCalcContracts;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
 using System.Text;
 
 namespace ArrayCalcAPI.Tests

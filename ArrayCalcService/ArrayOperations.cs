@@ -7,9 +7,15 @@ using ArrayCalcContracts;
 
 namespace ArrayCalcService
 {
+    /// <summary>
+    /// Array Operations Class
+    /// </summary>
     public class ArrayOperations : IArrayOperations
     {
-        //
+        /// <summary>
+        /// Reverses an input array.
+        /// </summary>
+        /// <param name="inputArray">arraylist</param>
         public void ReverseArray(int[] arraylist)
         {
             //no operation if array is empty or has a single item
@@ -32,6 +38,12 @@ namespace ArrayCalcService
             }
         }
 
+        /// <summary>
+        /// Removes an element from input array at specified position.
+        /// </summary>
+        /// <param name="deletePosition">deletePosition</param>
+        /// <param name="inputArray">inputArray</param>
+        /// <returns>Modified Array</returns>
         public int[] DeleteAtPosition(int deletePosition, int[] arraylist)
         {
             List<int> sortedList = new List<int>();
