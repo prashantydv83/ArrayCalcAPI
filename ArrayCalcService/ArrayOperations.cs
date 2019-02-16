@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
+using ArrayCalcContracts;
 
-namespace ArrayCalcAPI.Service
+namespace ArrayCalcService
 {
-    public static class ArrayOperations
+    public class ArrayOperations : IArrayOperations
     {
         //
-        public static void ReverseArray(int[] arraylist)
+        public void ReverseArray(int[] arraylist)
         {
             //no operation if array is empty or has a single item
             if (arraylist.Length < 2)
@@ -30,10 +32,10 @@ namespace ArrayCalcAPI.Service
             }
         }
 
-        public static int[] DeleteAtPosition(int deletePosition, int[] arraylist)
+        public int[] DeleteAtPosition(int deletePosition, int[] arraylist)
         {
             List<int> sortedList = new List<int>();
-            
+
             //subtracting 1 from deletePosition as Arrays are zero index based 
             deletePosition--;
 

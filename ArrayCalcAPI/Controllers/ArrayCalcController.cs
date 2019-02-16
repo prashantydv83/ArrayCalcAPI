@@ -5,12 +5,20 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Text;
-using ArrayCalcAPI.Service;
+using ArrayCalcService;
+using ArrayCalcContracts;
 
 namespace ArrayCalcAPI.Controllers
 {
     public class ArrayCalcController : ApiController
     {
+        private IArrayOperations arrayOperations;
+
+        public ArrayCalcController(IArrayOperations arrayoperations)
+        {
+            this.arrayOperations = arrayoperations;
+        }
+
         [HttpGet]
         public HttpResponseMessage Reverse([FromUri] int[] productIds)
         {
@@ -20,7 +28,7 @@ namespace ArrayCalcAPI.Controllers
                     Content = new StringContent("Invalid request", Encoding.UTF8, "text/html")
                 };
 
-            ArrayOperations.ReverseArray(productIds);
+            arrayOperations.ReverseArray(productIds);
 
             return new HttpResponseMessage()
             {
@@ -37,7 +45,7 @@ namespace ArrayCalcAPI.Controllers
                     Content = new StringContent("", Encoding.UTF8, "text/html")
                 };
 
-            productIds = ArrayOperations.DeleteAtPosition(position, productIds);
+            productIds = arrayOperations.DeleteAtPosition(position, productIds);
 
             return new HttpResponseMessage()
             {

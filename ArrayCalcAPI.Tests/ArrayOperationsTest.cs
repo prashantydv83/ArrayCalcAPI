@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ArrayCalcAPI.Service;
+using ArrayCalcService;
+using ArrayCalcContracts;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -10,16 +11,17 @@ namespace ArrayCalcAPI.Tests
 {
     [TestClass]
     public class ArrayOperationsTest
-    {
+    {        
         [TestMethod]
         [ExpectedException(typeof(NullReferenceException))]
         public void OnReverseArray_NullArray_IsInvalid()
         {
             //Arrange
             int[] testarraylist = null;
+            IArrayOperations arrayOperations = new ArrayOperations();
 
             //Act
-            ArrayOperations.ReverseArray(testarraylist);
+            arrayOperations.ReverseArray(testarraylist);
 
             //Assert
             CollectionAssert.AreEqual(null, testarraylist);
@@ -30,9 +32,10 @@ namespace ArrayCalcAPI.Tests
         {
             //Arrange
             int[] testarraylist = new int[] { 1 };
+            IArrayOperations arrayOperations = new ArrayOperations();
 
             //Act
-            ArrayOperations.ReverseArray(testarraylist);
+            arrayOperations.ReverseArray(testarraylist);
 
             //Assert
             CollectionAssert.AreEqual(new int[] { 1 }, testarraylist);
@@ -43,9 +46,10 @@ namespace ArrayCalcAPI.Tests
         {
             //Arrange
             int[] testarraylist = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            IArrayOperations arrayOperations = new ArrayOperations();
 
             //Act
-            ArrayOperations.ReverseArray(testarraylist);
+            arrayOperations.ReverseArray(testarraylist);
 
             //Assert
             CollectionAssert.AreEqual(new int[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 }, testarraylist);
@@ -57,9 +61,10 @@ namespace ArrayCalcAPI.Tests
         {
             //Arrange
             int[] testarraylist = new int[] { 15, 11, 19, 8, 6, 02 };
+            IArrayOperations arrayOperations = new ArrayOperations();
 
             //Act
-            ArrayOperations.ReverseArray(testarraylist);
+            arrayOperations.ReverseArray(testarraylist);
 
             //Assert
             CollectionAssert.AreEqual(new int[] { 2, 6, 8, 19, 11, 15 }, testarraylist);
@@ -71,12 +76,13 @@ namespace ArrayCalcAPI.Tests
         {
             //Arrange
             int[] testarraylist = null;
+            IArrayOperations arrayOperations = new ArrayOperations();
 
             //Act
-            ArrayOperations.DeleteAtPosition(1, testarraylist);
+            var result = arrayOperations.DeleteAtPosition(1, testarraylist);
 
             //Assert
-            CollectionAssert.AreEqual(null, testarraylist);
+            CollectionAssert.AreEqual(null, result);
         }
 
         [TestMethod]
@@ -84,12 +90,13 @@ namespace ArrayCalcAPI.Tests
         {
             //Arrange
             int[] testarraylist = new int[] { 5 };
+            IArrayOperations arrayOperations = new ArrayOperations();
 
             //Act
-            ArrayOperations.DeleteAtPosition(1, testarraylist);
+            var result = arrayOperations.DeleteAtPosition(1, testarraylist);
 
             //Assert
-            CollectionAssert.AreEqual(new int[] { 5 }, testarraylist);
+            CollectionAssert.AreEqual(new int[] { }, result);
         }
 
         [TestMethod]
@@ -97,9 +104,10 @@ namespace ArrayCalcAPI.Tests
         {
             //Arrange
             int[] testarraylist = new int[] { 1, 2, 3 };
+            IArrayOperations arrayOperations = new ArrayOperations();
 
             //Act
-            var result = ArrayOperations.DeleteAtPosition(0, testarraylist);
+            var result = arrayOperations.DeleteAtPosition(0, testarraylist);
 
             //Assert
             CollectionAssert.AreEqual(testarraylist, result);
@@ -110,9 +118,10 @@ namespace ArrayCalcAPI.Tests
         {
             //Arrange
             int[] testarraylist = new int[] { 10, 20, 30, 40, 50 };
+            IArrayOperations arrayOperations = new ArrayOperations();
 
             //Act
-            var result = ArrayOperations.DeleteAtPosition(6, testarraylist);
+            var result = arrayOperations.DeleteAtPosition(6, testarraylist);
 
             //Assert
             CollectionAssert.AreEqual(testarraylist, result);
@@ -123,9 +132,10 @@ namespace ArrayCalcAPI.Tests
         {
             //Arrange
             int[] testarraylist = new int[] { 1, 2, 3, 4, 5 };
+            IArrayOperations arrayOperations = new ArrayOperations();
 
             //Act
-            var result = ArrayOperations.DeleteAtPosition(1, testarraylist);
+            var result = arrayOperations.DeleteAtPosition(1, testarraylist);
 
             //Assert
             CollectionAssert.AreEqual(new int[] { 2, 3, 4, 5 }, result);

@@ -66,12 +66,21 @@
     <Compile Include="ArrayOperationsTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ArrayCalcAPI\ArrayCalcAPI.csproj">
       <Project>{D668383E-E94C-456D-80CB-FF3A23619DA7}</Project>
       <Name>ArrayCalcAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArrayCalcContracts\ArrayCalcContracts.csproj">
+      <Project>{24f8ea4e-d385-436b-b1be-23e9f800cc5d}</Project>
+      <Name>ArrayCalcContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArrayCalcService\ArrayCalcService.csproj">
+      <Project>{de24bdd9-505e-4b02-8d47-b5d10a278fc7}</Project>
+      <Name>ArrayCalcService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
