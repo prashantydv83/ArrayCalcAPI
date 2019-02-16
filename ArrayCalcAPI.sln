@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayCalcAPI", "ArrayCalcAPI\ArrayCalcAPI.csproj", "{D668383E-E94C-456D-80CB-FF3A23619DA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayCalcAPI.Tests", "ArrayCalcAPI.Tests\ArrayCalcAPI.Tests.csproj", "{52D35B5E-4E96-4344-B810-FE5CD163F012}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D668383E-E94C-456D-80CB-FF3A23619DA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D668383E-E94C-456D-80CB-FF3A23619DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D668383E-E94C-456D-80CB-FF3A23619DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D668383E-E94C-456D-80CB-FF3A23619DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D35B5E-4E96-4344-B810-FE5CD163F012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D35B5E-4E96-4344-B810-FE5CD163F012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D35B5E-4E96-4344-B810-FE5CD163F012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D35B5E-4E96-4344-B810-FE5CD163F012}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACC858A7-2C4C-4D8D-9587-42875C0C0BDF}
+	EndGlobalSection
+EndGlobal
