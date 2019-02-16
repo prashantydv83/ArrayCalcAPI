@@ -10,6 +10,7 @@ using ArrayCalcContracts;
 
 namespace ArrayCalcAPI.Controllers
 {
+    [RoutePrefix("api/arraycalc")]
     public class ArrayCalcController : ApiController
     {
         private IArrayOperations arrayOperations;
@@ -20,6 +21,7 @@ namespace ArrayCalcAPI.Controllers
         }
 
         [HttpGet]
+        [Route("Reverse")]
         public HttpResponseMessage Reverse([FromUri] int[] productIds)
         {
             if (productIds == null)
@@ -37,6 +39,7 @@ namespace ArrayCalcAPI.Controllers
         }
 
         [HttpGet]
+        [Route("DeletePart")]
         public HttpResponseMessage DeletePart(int position, [FromUri] int[] productIds)
         {
             if (productIds == null)

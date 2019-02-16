@@ -5,13 +5,15 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Text;
+using ArrayCalcContracts;
+using ArrayCalcService;
 
 namespace ArrayCalcAPI.Tests
 {
     [TestClass]
     public class ArrayCalcControllerTests
-    {
-        ArrayCalcController controller = new ArrayCalcController();
+    {       
+        ArrayCalcController controller = new ArrayCalcController(new ArrayOperations());
 
         [TestMethod]
         public void OnReverse_NullArray_IsInvalid()
